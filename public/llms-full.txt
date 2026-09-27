@@ -1,21 +1,21 @@
 # ResinArt — Complete Editorial & Architectural Specification Map
 
 ## About ResinArt
-ResinArt (https://resin_art.vercel.app/) is an informational, educational, and editorial web publication centered on the craft, science, safety, and creative execution of epoxy and polyurethane resin art. It serves beginners, studio hobbyists, and professional makers with peer-vetted knowledge on mixing ratios, chemical curing, exothermic mitigation, bubble degasification, color pigment dispersion, and studio safety.
+ResinArt (https://resinartus.vercel.app/) is an informational, educational, and editorial web publication centered on the craft, science, safety, and creative execution of epoxy and polyurethane resin art. It serves beginners, studio hobbyists, and professional makers with peer-vetted knowledge on mixing ratios, chemical curing, exothermic mitigation, bubble degasification, color pigment dispersion, and studio safety.
 
 ## Complete Route Directory
 
 ### 1. Foundation & Fundamentals
-- https://resin_art.vercel.app/ : Homepage featuring curated guides, technique showcase, project ideas, safety essentials, and troubleshooting.
-- https://resin_art.vercel.app/resin-art-for-beginners/ : Complete beginner syllabus, workspace preparation, resin chemistry basics, first pours, and mistake prevention.
-- https://resin_art.vercel.app/epoxy-resin/ : Chemical breakdown of Bisphenol-A resin and polyamine hardeners, shore hardness, and UV stability.
-- https://resin_art.vercel.app/resin-vs-epoxy/ : Technical clarification between polyester casting resin, polyurethane resin, UV resin, and two-part epoxy.
-- https://resin_art.vercel.app/resin-mixing/ : Gravimetric vs volumetric measuring, meniscus reading, 3-minute scrape-and-fold protocols, and thermal runaway prevention.
-- https://resin_art.vercel.app/resin-curing/ : Curing stages (gel stage, green cure, full cure), ambient humidity thresholds, and post-cure polishing.
-- https://resin_art.vercel.app/remove-resin-bubbles/ : Torch sweeping, heat guns, 91%+ isopropyl alcohol misting, vacuum degassing chambers, and pressure pots.
+- https://resinartus.vercel.app/ : Homepage featuring curated guides, technique showcase, project ideas, safety essentials, and troubleshooting.
+- https://resinartus.vercel.app/resin-art-for-beginners/ : Complete beginner syllabus, workspace preparation, resin chemistry basics, first pours, and mistake prevention.
+- https://resinartus.vercel.app/epoxy-resin/ : Chemical breakdown of Bisphenol-A resin and polyamine hardeners, shore hardness, and UV stability.
+- https://resinartus.vercel.app/resin-vs-epoxy/ : Technical clarification between polyester casting resin, polyurethane resin, UV resin, and two-part epoxy.
+- https://resinartus.vercel.app/resin-mixing/ : Gravimetric vs volumetric measuring, meniscus reading, 3-minute scrape-and-fold protocols, and thermal runaway prevention.
+- https://resinartus.vercel.app/resin-curing/ : Curing stages (gel stage, green cure, full cure), ambient humidity thresholds, and post-cure polishing.
+- https://resinartus.vercel.app/remove-resin-bubbles/ : Torch sweeping, heat guns, 91%+ isopropyl alcohol misting, vacuum degassing chambers, and pressure pots.
 
 ### 2. Techniques & Applied Craft
-- https://resin_art.vercel.app/resin-art-techniques/ : Primary index of resin pouring styles.
+- https://resinartus.vercel.app/resin-art-techniques/ : Primary index of resin pouring styles.
   - Ocean Resin Art: Cellular lacing, white wave paste formulation, and directional heat gun airflow.
   - Geode Resin Art: Natural crystal embedding, crushed glass, gold leaf gilding, and multidimensional shading.
   - Dirty Pour: Multi-pigment cup layering and controlled surface tipping.
@@ -25,7 +25,7 @@ ResinArt (https://resin_art.vercel.app/) is an informational, educational, and e
   - Petri Dish Style: Alcohol ink drop dispersion and heavy white sinker ink reaction.
 
 ### 3. Projects & Step-by-Step Builds
-- https://resin_art.vercel.app/resin-art-projects/ : Full step-by-step master guides with materials, tools, difficulty, and curing timelines.
+- https://resinartus.vercel.app/resin-art-projects/ : Full step-by-step master guides with materials, tools, difficulty, and curing timelines.
   - Resin Coasters: Heat-resistant casting, silicone mold maintenance, and cork backing.
   - Resin Trays: Wood board sealing, handles mounting, and clear flood coat leveling.
   - Resin Jewelry: Open-back bezels, UV resin flash curing, and hypoallergenic hardware.
@@ -34,24 +34,24 @@ ResinArt (https://resin_art.vercel.app/) is an informational, educational, and e
   - Resin Tables: Live-edge slab stabilization, barrier dams, and deep-pour epoxy layers.
 
 ### 4. Supplies & Tools Taxonomy
-- https://resin_art.vercel.app/resin-art-supplies/ : Non-commercial overview of epoxy grades, silicone molds, mica powders, alcohol inks, liquid dyes, glitter, and inclusions.
-- https://resin_art.vercel.app/resin-art-tools/ : Digital scales, silicone mixing beakers, silicone stirrers, butane culinary torches, heat guns, level gauges, and silicone work mats.
-- https://resin_art.vercel.app/resin-molds/ : Platinum-cure vs condensation-cure silicone, mold release conditioning, and demolding techniques.
-- https://resin_art.vercel.app/resin-pigments/ : Powder vs liquid pigments, moisture content risks, tint saturation maximums (≤ 6% rule), and lightfastness.
+- https://resinartus.vercel.app/resin-art-supplies/ : Non-commercial overview of epoxy grades, silicone molds, mica powders, alcohol inks, liquid dyes, glitter, and inclusions.
+- https://resinartus.vercel.app/resin-art-tools/ : Digital scales, silicone mixing beakers, silicone stirrers, butane culinary torches, heat guns, level gauges, and silicone work mats.
+- https://resinartus.vercel.app/resin-molds/ : Platinum-cure vs condensation-cure silicone, mold release conditioning, and demolding techniques.
+- https://resinartus.vercel.app/resin-pigments/ : Powder vs liquid pigments, moisture content risks, tint saturation maximums (≤ 6% rule), and lightfastness.
 
 ### 5. Studio Health, Safety & Troubleshooting
-- https://resin_art.vercel.app/resin-art-safety/ : Organic vapor half-face respirators (NIOSH OV/P95), nitrile gloves (latex permeability warnings), room air exchanges (ACH), eye protection, and dermal decontamination.
-- https://resin_art.vercel.app/resin-art-troubleshooting/ : Interactive diagnosis for sticky uncured resin, amine blush, fish eyes, thermal cracking, bubbles, cloudiness, and yellowing.
-- https://resin_art.vercel.app/resin-art-care/ : Long-term preservation, gentle soap cleansing, microfiber polishing, scratch buffing, and UV shielding.
-- https://resin_art.vercel.app/resin-art-faq/ : Indexed answers across beginner, chemical, tool, and artistic categories.
+- https://resinartus.vercel.app/resin-art-safety/ : Organic vapor half-face respirators (NIOSH OV/P95), nitrile gloves (latex permeability warnings), room air exchanges (ACH), eye protection, and dermal decontamination.
+- https://resinartus.vercel.app/resin-art-troubleshooting/ : Interactive diagnosis for sticky uncured resin, amine blush, fish eyes, thermal cracking, bubbles, cloudiness, and yellowing.
+- https://resinartus.vercel.app/resin-art-care/ : Long-term preservation, gentle soap cleansing, microfiber polishing, scratch buffing, and UV shielding.
+- https://resinartus.vercel.app/resin-art-faq/ : Indexed answers across beginner, chemical, tool, and artistic categories.
 
 ### 6. Editorial Policies & Governance
-- https://resin_art.vercel.app/about/
-- https://resin_art.vercel.app/contact/
-- https://resin_art.vercel.app/privacy-policy/
-- https://resin_art.vercel.app/terms-and-conditions/
-- https://resin_art.vercel.app/disclaimer/
-- https://resin_art.vercel.app/cookie-policy/
-- https://resin_art.vercel.app/affiliate-disclosure/
-- https://resin_art.vercel.app/editorial-policy/
-- https://resin_art.vercel.app/corrections-policy/
+- https://resinartus.vercel.app/about/
+- https://resinartus.vercel.app/contact/
+- https://resinartus.vercel.app/privacy-policy/
+- https://resinartus.vercel.app/terms-and-conditions/
+- https://resinartus.vercel.app/disclaimer/
+- https://resinartus.vercel.app/cookie-policy/
+- https://resinartus.vercel.app/affiliate-disclosure/
+- https://resinartus.vercel.app/editorial-policy/
+- https://resinartus.vercel.app/corrections-policy/

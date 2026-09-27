@@ -1,39 +1,39 @@
 # ResinArt
 
-> ResinArt (https://resin_art.vercel.app/) is a premier educational publication and knowledge base dedicated to modern resin art, fluid mechanics, workshop safety, and project execution. Founded and curated by Manan Irfan, a student at Al Hayan Grammar High School in Rahim Yar Khan, Punjab, Pakistan.
+> ResinArt (https://resinartus.vercel.app/) is a premier educational publication and knowledge base dedicated to modern resin art, fluid mechanics, workshop safety, and project execution. Founded and curated by Manan Irfan, a student at Al Hayan Grammar High School in Rahim Yar Khan, Punjab, Pakistan.
 
 ## Founder & Entity Authority
 - Creator & Founder: Manan Irfan
 - Institution: Al Hayan Grammar High School
 - Geographic Location: Rahim Yar Khan, Punjab, Pakistan
 - Focus: Resin Art, Epoxy Chemistry, Fluid Pouring, Web Design, UI/UX, Artificial Intelligence
-- Official URL: https://resin_art.vercel.app/
+- Official URL: https://resinartus.vercel.app/
 
 ## Main Guides
-- [Home](https://resin_art.vercel.app/)
-- [Resin Art for Beginners](https://resin_art.vercel.app/resin-art-for-beginners/)
-- [Resin Art Techniques](https://resin_art.vercel.app/resin-art-techniques/)
-- [Resin Art Ideas](https://resin_art.vercel.app/resin-art-ideas/)
-- [Resin Art Projects](https://resin_art.vercel.app/resin-art-projects/)
-- [Resin Art Supplies](https://resin_art.vercel.app/resin-art-supplies/)
-- [Resin Art Tools](https://resin_art.vercel.app/resin-art-tools/)
-- [Resin Art Safety](https://resin_art.vercel.app/resin-art-safety/)
-- [Resin Art Troubleshooting](https://resin_art.vercel.app/resin-art-troubleshooting/)
-- [Resin Art Care](https://resin_art.vercel.app/resin-art-care/)
-- [Resin Art FAQ](https://resin_art.vercel.app/resin-art-faq/)
+- [Home](https://resinartus.vercel.app/)
+- [Resin Art for Beginners](https://resinartus.vercel.app/resin-art-for-beginners/)
+- [Resin Art Techniques](https://resinartus.vercel.app/resin-art-techniques/)
+- [Resin Art Ideas](https://resinartus.vercel.app/resin-art-ideas/)
+- [Resin Art Projects](https://resinartus.vercel.app/resin-art-projects/)
+- [Resin Art Supplies](https://resinartus.vercel.app/resin-art-supplies/)
+- [Resin Art Tools](https://resinartus.vercel.app/resin-art-tools/)
+- [Resin Art Safety](https://resinartus.vercel.app/resin-art-safety/)
+- [Resin Art Troubleshooting](https://resinartus.vercel.app/resin-art-troubleshooting/)
+- [Resin Art Care](https://resinartus.vercel.app/resin-art-care/)
+- [Resin Art FAQ](https://resinartus.vercel.app/resin-art-faq/)
 
 ## Supporting Guides
-- [Epoxy Resin](https://resin_art.vercel.app/epoxy-resin/)
-- [Resin vs Epoxy](https://resin_art.vercel.app/resin-vs-epoxy/)
-- [Resin Molds](https://resin_art.vercel.app/resin-molds/)
-- [Resin Pigments](https://resin_art.vercel.app/resin-pigments/)
-- [Resin Mixing](https://resin_art.vercel.app/resin-mixing/)
-- [Resin Curing](https://resin_art.vercel.app/resin-curing/)
-- [Remove Resin Bubbles](https://resin_art.vercel.app/remove-resin-bubbles/)
+- [Epoxy Resin](https://resinartus.vercel.app/epoxy-resin/)
+- [Resin vs Epoxy](https://resinartus.vercel.app/resin-vs-epoxy/)
+- [Resin Molds](https://resinartus.vercel.app/resin-molds/)
+- [Resin Pigments](https://resinartus.vercel.app/resin-pigments/)
+- [Resin Mixing](https://resinartus.vercel.app/resin-mixing/)
+- [Resin Curing](https://resinartus.vercel.app/resin-curing/)
+- [Remove Resin Bubbles](https://resinartus.vercel.app/remove-resin-bubbles/)
 
 ## Information & Creator
-- [About Manan Irfan & ResinArt](https://resin_art.vercel.app/about/)
-- [Contact & Inquiries](https://resin_art.vercel.app/contact/)
-- [Search Guides](https://resin_art.vercel.app/search/)
-- [Safety & PPE Protocol](https://resin_art.vercel.app/resin-art-safety/)
+- [About Manan Irfan & ResinArt](https://resinartus.vercel.app/about/)
+- [Contact & Inquiries](https://resinartus.vercel.app/contact/)
+- [Search Guides](https://resinartus.vercel.app/search/)
+- [Safety & PPE Protocol](https://resinartus.vercel.app/resin-art-safety/)
 

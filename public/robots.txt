@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /admin/*
 Disallow: /api/
 
-Sitemap: https://resin_art.vercel.app/sitemap.xml
+Sitemap: https://resinartus.vercel.app/sitemap.xml

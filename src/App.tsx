@@ -47,6 +47,8 @@ import { AdminMessages } from './pages/admin/AdminMessages';
 import { AdminSubscribers } from './pages/admin/AdminSubscribers';
 import { AdminSettings } from './pages/admin/AdminSettings';
 
+import { INITIAL_ARTICLES, INITIAL_PROJECTS } from './data/seedData';
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     return window.location.pathname || '/';
@@ -56,19 +58,70 @@ export default function App() {
 
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      setCurrentPath(window.location.pathname + window.location.search || '/');
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  // Intercept all internal <a> link clicks so they smoothly navigate without 404
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+      const href = target.getAttribute('href');
+      if (!href) return;
+
+      // Don't intercept target="_blank", mailto, tel, or download links
+      if (
+        target.target === '_blank' || 
+        target.hasAttribute('download') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.startsWith('javascript:')
+      ) {
+        return;
+      }
+
+      // If it's a relative link or matches the app domain
+      if (
+        href.startsWith('/') ||
+        href.startsWith('https://resinartus.vercel.app') ||
+        href.startsWith('https://resin_art.vercel.app') ||
+        href.startsWith(window.location.origin)
+      ) {
+        e.preventDefault();
+        let targetPath = href;
+        if (targetPath.startsWith('http://') || targetPath.startsWith('https://')) {
+          try {
+            const parsed = new URL(targetPath);
+            targetPath = parsed.pathname + parsed.search + parsed.hash;
+          } catch {}
+        }
+        navigate(targetPath || '/');
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, [currentPath]);
+
   const navigate = (path: string) => {
-    if (path === currentPath) {
+    let clean = path;
+    // Normalize full URLs to paths
+    if (clean.startsWith('http://') || clean.startsWith('https://')) {
+      try {
+        const u = new URL(clean);
+        clean = u.pathname + u.search + u.hash;
+      } catch {}
+    }
+
+    if (clean === currentPath) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    window.history.pushState({}, '', path);
-    setCurrentPath(path);
+    window.history.pushState({}, '', clean);
+    setCurrentPath(clean);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -76,10 +129,17 @@ export default function App() {
 
   // Router dispatcher
   const renderRoute = () => {
-    // Normalization
-    const path = currentPath.endsWith('/') && currentPath.length > 1
-      ? currentPath.slice(0, -1)
-      : currentPath;
+    // Normalization: strip origin, search params, hashes, trailing slashes
+    let path = currentPath;
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+      try {
+        path = new URL(path).pathname;
+      } catch {}
+    }
+    path = path.split('?')[0].split('#')[0].toLowerCase();
+    if (path.endsWith('/') && path.length > 1) {
+      path = path.slice(0, -1);
+    }
 
     // Homepage
     if (path === '' || path === '/') {
@@ -278,6 +338,19 @@ export default function App() {
           <AdminSettings />
         </AdminLayout>
       );
+    }
+
+    // Direct Article Slug Fallback (e.g. /ocean-resin-art-guide)
+    const directSlug = path.startsWith('/') ? path.slice(1) : path;
+    const matchingArticle = INITIAL_ARTICLES.find(a => a.slug.toLowerCase() === directSlug);
+    if (matchingArticle) {
+      return <ArticleDetailPage slug={matchingArticle.slug} onNavigate={navigate} />;
+    }
+
+    // Direct Project Slug Fallback (e.g. /ocean-resin-charcuterie-board)
+    const matchingProject = INITIAL_PROJECTS.find(p => p.slug.toLowerCase() === directSlug);
+    if (matchingProject) {
+      return <ProjectDetailPage slug={matchingProject.slug} onNavigate={navigate} />;
     }
 
     // 404 Fallback

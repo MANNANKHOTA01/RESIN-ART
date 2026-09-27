@@ -256,7 +256,7 @@ export const Footer: React.FC<{ onNavigate: (path: string) => void }> = ({ onNav
           <p>© {new Date().getFullYear()} ResinArt. All rights reserved. Peer-vetted resin craft education.</p>
           
           <div className="flex items-center gap-4">
-            <span className="text-stone-600">Production URL: resin_art.vercel.app</span>
+            <span className="text-stone-600">Production URL: resinartus.vercel.app</span>
             <span className="text-stone-700">·</span>
             <button
               onClick={() => onNavigate('/admin/login/')}
