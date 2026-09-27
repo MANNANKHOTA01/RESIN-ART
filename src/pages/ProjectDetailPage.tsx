@@ -154,6 +154,35 @@ export const ProjectDetailPage: React.FC<ProjectDetailProps> = ({ slug, onNaviga
             className="prose prose-stone text-xs sm:text-sm leading-relaxed text-stone-700 pt-4"
             dangerouslySetInnerHTML={{ __html: project.content }}
           />
+
+          {/* Editorial Author Bio Box */}
+          <div className="my-8 p-6 rounded-2xl bg-stone-50 border border-stone-200/90 flex flex-col sm:flex-row items-center sm:items-start gap-5">
+            <img
+              src="/manan_irfan.jpg"
+              alt="Manan Irfan"
+              className="w-16 h-16 rounded-full object-cover border-2 border-teal-600 shadow-sm shrink-0"
+            />
+            <div className="space-y-1.5 text-center sm:text-left">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span className="font-serif text-base font-semibold text-stone-900">
+                  Curated by Manan Irfan
+                </span>
+                <span className="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-[10px] font-bold uppercase tracking-wider">
+                  Lead Instructor
+                </span>
+              </div>
+              <p className="text-xs text-stone-600 leading-relaxed font-sans">
+                10th-class student at <strong>Al Hayan Grammar High School</strong> in Rahim Yar Khan, Pakistan. Documenting resin craft formulas, ratio benchmarks, and step-by-step studio execution.
+              </p>
+              <button
+                onClick={() => onNavigate('/about/')}
+                className="text-xs font-semibold text-teal-700 hover:text-teal-900 underline cursor-pointer inline-flex items-center gap-1 pt-1"
+              >
+                <span>Learn more about Manan's journey</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

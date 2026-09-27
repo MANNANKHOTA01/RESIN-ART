@@ -129,48 +129,178 @@ export const HomePage: React.FC<{ onNavigate: (path: string) => void }> = ({ onN
   return (
     <div className="space-y-16 sm:space-y-24">
       {/* =========================================================================
-          HERO SECTION (Matches Mockup Layout with Ocean Waves & Editorial Headline)
+          HERO SECTION (High-Aesthetic Editorial Showcase with Creator Spotlight)
          ========================================================================= */}
-      <section className="relative overflow-hidden bg-slate-950 text-white min-h-[580px] lg:min-h-[640px] flex items-center">
-        {/* Background Image with Dark Gradient Scrim */}
+      <section className="relative overflow-hidden bg-slate-950 text-white min-h-[620px] lg:min-h-[700px] flex items-center">
+        {/* Background Image with Cinematic Dark Gradient Scrim */}
         <div className="absolute inset-0">
           <img
             src={HERO_OCEAN_IMAGE}
             alt="Handcrafted ocean resin art with sea foam lacing"
-            className="w-full h-full object-cover object-center opacity-45 scale-102 transform duration-1000 ease-out"
+            className="w-full h-full object-cover object-center opacity-40 scale-102 transform duration-1000 ease-out"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
+          {/* Subtle Golden Resin Vein Glow */}
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-          <div className="max-w-2xl">
-            <span className="inline-block text-xs uppercase tracking-widest text-teal-300 font-semibold mb-3">
-              The Peer-Reviewed Resin Art Publication
-            </span>
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-tight mb-5">
-              Discover the <br className="hidden sm:inline" />
-              <span className="italic font-normal text-teal-200">Art of Resin</span>
-            </h1>
-            <p className="text-stone-200 text-sm sm:text-base lg:text-lg leading-relaxed mb-8 max-w-xl">
-              Learn resin art from the fundamentals to advanced techniques, creative projects, materials, safety, and troubleshooting.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-              <button
-                onClick={() => onNavigate('/resin-art-techniques/')}
-                className="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-teal-300 hover:bg-teal-200 rounded-lg shadow-md transition-all cursor-pointer flex items-center gap-2"
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Hero Narrative */}
+            <div className="lg:col-span-7">
+              {/* Creator Verification Badge */}
+              <div 
+                onClick={() => onNavigate('/about/')}
+                className="group cursor-pointer inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/15 border border-teal-400/30 backdrop-blur-md mb-5 text-xs transition shadow-sm"
               >
-                <span>Explore Guides</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <img
+                  src="/manan_irfan.jpg"
+                  alt="Manan Irfan"
+                  className="w-6 h-6 rounded-full object-cover border border-teal-300 ring-2 ring-teal-500/30"
+                />
+                <span className="text-stone-200">
+                  Curated by <strong className="text-white font-semibold group-hover:text-teal-300 transition">Manan Irfan</strong> · Al Hayan Grammar High School
+                </span>
+                <span className="text-teal-300 font-medium hidden sm:inline">→</span>
+              </div>
 
-              <button
-                onClick={() => onNavigate('/resin-art-for-beginners/')}
-                className="px-6 py-3 text-xs sm:text-sm font-medium text-white hover:text-teal-200 bg-white/10 hover:bg-white/15 backdrop-blur-xs border border-white/20 rounded-lg transition-all cursor-pointer"
-              >
-                Start for Beginners
-              </button>
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-tight mb-5">
+                Master the Art of <br className="hidden sm:inline" />
+                <span className="italic font-normal text-teal-300 drop-shadow-xs">Modern Resin</span>
+              </h1>
+              
+              <p className="text-stone-200 text-sm sm:text-base lg:text-lg leading-relaxed mb-6 max-w-xl font-light">
+                Discover resin art from liquid chemistry to crystal masterpieces. Peer-reviewed tutorials on wave pouring, geode geodes, mixing ratios, and certified studio safety.
+              </p>
+
+              {/* Quick Jump Topic Chips */}
+              <div className="flex flex-wrap gap-2 mb-8 text-xs font-medium">
+                <button
+                  onClick={() => onNavigate('/articles/ocean-resin-art-guide')}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-teal-500/20 text-stone-200 hover:text-teal-200 border border-white/15 transition cursor-pointer"
+                >
+                  🌊 Ocean Waves
+                </button>
+                <button
+                  onClick={() => onNavigate('/articles/geode-resin-art-tutorial')}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-teal-500/20 text-stone-200 hover:text-teal-200 border border-white/15 transition cursor-pointer"
+                >
+                  💎 Geode Veins
+                </button>
+                <button
+                  onClick={() => onNavigate('/resin-mixing/')}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-teal-500/20 text-stone-200 hover:text-teal-200 border border-white/15 transition cursor-pointer"
+                >
+                  ⏳ 1:1 Mixing Ratios
+                </button>
+                <button
+                  onClick={() => onNavigate('/remove-resin-bubbles/')}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-teal-500/20 text-stone-200 hover:text-teal-200 border border-white/15 transition cursor-pointer"
+                >
+                  ✨ Zero-Bubble Pouring
+                </button>
+                <button
+                  onClick={() => onNavigate('/resin-art-safety/')}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-teal-500/20 text-stone-200 hover:text-teal-200 border border-white/15 transition cursor-pointer"
+                >
+                  🛡️ Studio Safety
+                </button>
+              </div>
+
+              {/* Call to Actions */}
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <button
+                  onClick={() => onNavigate('/resin-art-techniques/')}
+                  className="px-6 py-3.5 text-xs sm:text-sm font-semibold text-slate-950 bg-teal-300 hover:bg-teal-200 rounded-xl shadow-lg transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <span>Explore All Guides</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={() => onNavigate('/resin-art-for-beginners/')}
+                  className="px-6 py-3.5 text-xs sm:text-sm font-medium text-white hover:text-teal-200 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/20 rounded-xl transition-all cursor-pointer"
+                >
+                  Start Beginner Course
+                </button>
+              </div>
+            </div>
+
+            {/* Right Interactive Featured Card */}
+            <div className="lg:col-span-5 hidden lg:block">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-slate-900/60 backdrop-blur-md shadow-2xl p-4">
+                <div className="relative aspect-4/3 rounded-xl overflow-hidden mb-4 group cursor-pointer" onClick={() => onNavigate('/articles/ocean-resin-art-guide')}>
+                  <img
+                    src={HERO_OCEAN_IMAGE}
+                    alt="Ocean wave resin detail"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] font-semibold text-teal-300 border border-teal-500/30">
+                    ★ Editor's Pick Masterclass
+                  </div>
+                  <div className="absolute bottom-3 right-3 bg-slate-950/80 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] text-stone-300">
+                    Level: Beginner Friendly
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="font-serif text-lg font-medium text-white">
+                    Realistic Ocean Lacing & Cellular Wave Flow
+                  </h3>
+                  <div className="grid grid-cols-3 gap-2 text-center text-xs py-2 bg-white/5 rounded-lg border border-white/10">
+                    <div>
+                      <span className="text-[10px] text-stone-400 block uppercase">Ratio</span>
+                      <strong className="text-teal-300">1:1 Vol</strong>
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-stone-400 block uppercase">Work Time</span>
+                      <strong className="text-white">40 Mins</strong>
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-stone-400 block uppercase">Full Cure</span>
+                      <strong className="text-white">24 Hours</strong>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-xs pt-1">
+                    <span className="text-stone-300 flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                      <span>4-Layer Depth Technique</span>
+                    </span>
+                    <button
+                      onClick={() => onNavigate('/articles/ocean-resin-art-guide')}
+                      className="text-teal-300 hover:text-teal-200 font-semibold flex items-center gap-1 cursor-pointer"
+                    >
+                      <span>Read tutorial</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Trust/Stats Ribbon */}
+        <div className="absolute bottom-0 inset-x-0 bg-slate-950/80 backdrop-blur-md border-t border-white/10 hidden md:block">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="grid grid-cols-4 gap-4 text-center text-xs">
+              <div>
+                <strong className="text-teal-300 text-sm font-serif">50+</strong>
+                <span className="text-stone-300 ml-1.5">Step-by-Step Guides</span>
+              </div>
+              <div>
+                <strong className="text-teal-300 text-sm font-serif">100%</strong>
+                <span className="text-stone-300 ml-1.5">Safety & PPE Certified</span>
+              </div>
+              <div>
+                <strong className="text-teal-300 text-sm font-serif">Zero VOC</strong>
+                <span className="text-stone-300 ml-1.5">Indoor Resin Standards</span>
+              </div>
+              <div>
+                <strong className="text-teal-300 text-sm font-serif">Global</strong>
+                <span className="text-stone-300 ml-1.5">Makers Community</span>
+              </div>
             </div>
           </div>
         </div>
@@ -566,7 +696,85 @@ export const HomePage: React.FC<{ onNavigate: (path: string) => void }> = ({ onN
       </section>
 
       {/* =========================================================================
-          SECTION 9: NEWSLETTER SECTION
+          SECTION 9: MEET THE CREATOR & FOUNDER (MANAN IRFAN)
+         ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-white via-stone-50 to-teal-50/40 rounded-3xl border border-stone-200/90 shadow-sm p-6 sm:p-10 lg:p-12 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Creator Photo Frame */}
+            <div className="lg:col-span-4 flex flex-col items-center text-center">
+              <div className="relative group cursor-pointer" onClick={() => onNavigate('/about/')}>
+                <div className="w-52 h-52 sm:w-60 sm:h-60 rounded-2xl overflow-hidden shadow-lg border-4 border-white ring-2 ring-teal-600/30 group-hover:scale-102 transition duration-500">
+                  <img
+                    src="/manan_irfan.jpg"
+                    alt="Manan Irfan - Founder of ResinArt"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent flex items-end justify-center p-3">
+                    <span className="text-white text-xs font-semibold tracking-wide">
+                      Manan Irfan · Creator
+                    </span>
+                  </div>
+                </div>
+                <div className="absolute -bottom-3 bg-teal-700 text-white text-[11px] font-semibold px-3 py-1 rounded-full shadow-md">
+                  ★ Founder & Editor
+                </div>
+              </div>
+
+              <div className="mt-5 space-y-1 text-xs text-stone-600">
+                <strong className="text-stone-900 block font-medium">
+                  Al Hayan Grammar High School
+                </strong>
+                <span className="text-stone-500 block">
+                  Rahim Yar Khan, Punjab, Pakistan
+                </span>
+              </div>
+            </div>
+
+            {/* Creator Narrative & Mission */}
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-100/70 border border-teal-200 text-teal-900 text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-teal-700" />
+                <span>The Story Behind ResinArt</span>
+              </div>
+
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-medium text-stone-900 tracking-tight leading-tight">
+                Crafted with Passion by Manan Irfan
+              </h2>
+
+              <p className="text-stone-700 text-xs sm:text-sm sm:leading-relaxed font-sans">
+                Hi, I’m <strong>Manan Irfan</strong>, a 10th-class student at <strong>Al Hayan Grammar High School</strong> in Rahim Yar Khan, Pakistan. I created <strong>ResinArt</strong> to combine my passion for creative resin art with modern web technology, UI/UX design, and digital education.
+              </p>
+
+              <p className="text-stone-600 text-xs sm:text-sm sm:leading-relaxed font-sans">
+                Resin art is extraordinary because two artists can use the exact same materials, yet create completely different oceanic waves, marble effects, and crystalline geodes. Through ResinArt, I want to make reliable, step-by-step guides, safety knowledge, and project inspiration easily discoverable for beginners, students, and experienced artists worldwide.
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => onNavigate('/about/')}
+                  className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition cursor-pointer shadow-xs flex items-center gap-2"
+                >
+                  <span>Read Manan's Story & Journey</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+
+                <button
+                  onClick={() => onNavigate('/contact/')}
+                  className="px-5 py-2.5 bg-white hover:bg-stone-100 text-stone-800 border border-stone-200 text-xs font-medium rounded-xl transition cursor-pointer"
+                >
+                  Get in Touch
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 10: NEWSLETTER SECTION
          ========================================================================= */}
       <NewsletterSection />
     </div>

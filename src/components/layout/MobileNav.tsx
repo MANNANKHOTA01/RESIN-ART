@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ChevronDown, Search, Shield, X } from 'lucide-react';
+import { ChevronDown, LogIn, LogOut, Search, Shield, ShieldCheck, UserPlus, X } from 'lucide-react';
 import { Logo } from './Logo';
 import { PWAInstallButton } from '../common/PWAInstallButton';
 import { useAuth } from '../../context/AuthContext';
+import { AuthModal } from '../common/AuthModal';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -20,7 +21,9 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   onOpenSearch
 }) => {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const { isAdmin } = useAuth();
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signin');
+  const { user, isAdmin, logout } = useAuth();
 
   if (!isOpen) return null;
 
@@ -141,8 +144,88 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </div>
         </div>
 
-        {/* Bottom PWA & Admin Info */}
+        {/* Bottom Auth, PWA & Admin Info */}
         <div className="p-4 border-t border-stone-200 bg-stone-50 space-y-3">
+          {user ? (
+            <div className="p-3 bg-white rounded-xl border border-stone-200 shadow-2xs">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                  {isAdmin ? (
+                    <img
+                      src="/manan_irfan.jpg"
+                      alt="Manan Irfan"
+                      className="w-7 h-7 rounded-full object-cover border border-teal-600"
+                    />
+                  ) : (
+                    <div className="w-7 h-7 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xs">
+                      {user.fullName ? user.fullName[0].toUpperCase() : 'U'}
+                    </div>
+                  )}
+                  <div>
+                    <span className="text-xs font-semibold text-stone-900 block">
+                      {user.fullName || (isAdmin ? 'Manan Irfan' : 'Reader')}
+                    </span>
+                    <span className="text-[10px] text-stone-500 block truncate max-w-[160px]">
+                      {user.email}
+                    </span>
+                  </div>
+                </div>
+                {isAdmin && (
+                  <span className="px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200 rounded">
+                    Admin
+                  </span>
+                )}
+              </div>
+
+              <div className="pt-2 border-t border-stone-100 flex items-center justify-between">
+                {isAdmin ? (
+                  <button
+                    onClick={() => handleNav('/admin/dashboard/')}
+                    className="text-xs font-medium text-teal-800 flex items-center gap-1 hover:underline"
+                  >
+                    <ShieldCheck className="w-3.5 h-3.5 text-teal-700" />
+                    <span>CMS Dashboard</span>
+                  </button>
+                ) : (
+                  <span className="text-xs text-stone-500">Member Session Active</span>
+                )}
+
+                <button
+                  onClick={async () => {
+                    await logout();
+                  }}
+                  className="text-xs text-rose-600 font-medium flex items-center gap-1 hover:underline"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Sign Out</span>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => {
+                  setAuthModalMode('signin');
+                  setIsAuthModalOpen(true);
+                }}
+                className="py-2 px-3 text-xs font-medium text-stone-800 bg-white border border-stone-200 rounded-lg text-center flex items-center justify-center gap-1.5 shadow-2xs hover:bg-stone-50"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Log In</span>
+              </button>
+              <button
+                onClick={() => {
+                  setAuthModalMode('signup');
+                  setIsAuthModalOpen(true);
+                }}
+                className="py-2 px-3 text-xs font-semibold text-white bg-teal-700 hover:bg-teal-800 rounded-lg text-center flex items-center justify-center gap-1.5 shadow-2xs"
+              >
+                <UserPlus className="w-3.5 h-3.5" />
+                <span>Sign Up</span>
+              </button>
+            </div>
+          )}
+
           <div className="flex items-center justify-between">
             <PWAInstallButton />
           </div>
@@ -162,6 +245,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           </div>
         </div>
       </div>
+
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        initialMode={authModalMode}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 };

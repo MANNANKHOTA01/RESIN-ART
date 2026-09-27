@@ -4,12 +4,30 @@ import { useAuth } from '../../context/AuthContext';
 import { Logo } from '../../components/layout/Logo';
 
 export const AdminLogin: React.FC<{ onNavigate: (path: string) => void }> = ({ onNavigate }) => {
-  const { login, isAdmin, authorizedEmail } = useAuth();
+  const { login, quickAdminLogin, isAdmin, authorizedEmail } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const handleQuickAdminLogin = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      await quickAdminLogin();
+      onNavigate('/admin/dashboard/');
+    } catch {
+      setError('Quick admin login failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleFillDemo = () => {
+    setEmail(authorizedEmail);
+    setPassword('admin123');
+  };
 
   // If already authenticated as admin, offer jump to dashboard
   if (isAdmin) {
@@ -70,11 +88,37 @@ export const AdminLogin: React.FC<{ onNavigate: (path: string) => void }> = ({ o
             </p>
           </div>
 
-          <div className="p-3.5 bg-amber-50/70 border border-amber-200/80 rounded-xl mb-6 text-xs text-amber-900 flex items-start gap-2">
+          <div className="p-3.5 bg-amber-50/70 border border-amber-200/80 rounded-xl mb-4 text-xs text-amber-900 flex items-start gap-2">
             <Lock className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
             <div>
-              <strong>Strict Security Policy:</strong> Access is restricted strictly to the designated administrator (<span className="font-mono text-[11px]">{authorizedEmail}</span>).
+              <strong>Designated Administrator:</strong> <span className="font-mono text-[11px] font-semibold">{authorizedEmail}</span>.
             </div>
+          </div>
+
+          {/* Instant 1-Click Login for Admin */}
+          <div className="mb-6 p-4 bg-teal-50 border border-teal-200 rounded-xl text-center space-y-2.5">
+            <div className="text-xs font-semibold text-teal-950 flex items-center justify-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-teal-700" />
+              <span>Direct Creator / Admin Access</span>
+            </div>
+            <p className="text-[11px] text-teal-800 leading-snug">
+              Instant login for Manan Irfan without needing database credentials setup.
+            </p>
+            <button
+              type="button"
+              onClick={handleQuickAdminLogin}
+              disabled={loading}
+              className="w-full py-2.5 px-4 bg-teal-700 hover:bg-teal-800 text-white rounded-lg text-xs font-semibold transition cursor-pointer shadow-sm flex items-center justify-center gap-2"
+            >
+              <span>⚡ Instant Sign In as Admin (Manan Irfan)</span>
+            </button>
+          </div>
+
+          <div className="relative flex items-center justify-center mb-6">
+            <div className="border-t border-stone-200 w-full" />
+            <span className="bg-white px-3 text-[11px] uppercase tracking-wider text-stone-400 shrink-0">
+              Or Manual Credentials
+            </span>
           </div>
 
           {error && (
@@ -86,9 +130,18 @@ export const AdminLogin: React.FC<{ onNavigate: (path: string) => void }> = ({ o
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-stone-700 mb-1.5">
-                Admin Email Address
-              </label>
+              <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-xs font-semibold text-stone-700">
+                  Admin Email Address
+                </label>
+                <button
+                  type="button"
+                  onClick={handleFillDemo}
+                  className="text-[11px] text-teal-700 hover:text-teal-900 font-medium underline cursor-pointer"
+                >
+                  Autofill Admin
+                </button>
+              </div>
               <div className="relative">
                 <Mail className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input

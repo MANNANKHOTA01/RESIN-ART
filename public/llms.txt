@@ -1,6 +1,13 @@
 # ResinArt
 
-> ResinArt is an informational website dedicated to resin art, including beginner guides, techniques, projects, supplies, tools, safety, troubleshooting, and resin education.
+> ResinArt (https://resin_art.vercel.app/) is a premier educational publication and knowledge base dedicated to modern resin art, fluid mechanics, workshop safety, and project execution. Founded and curated by Manan Irfan, a student at Al Hayan Grammar High School in Rahim Yar Khan, Punjab, Pakistan.
+
+## Founder & Entity Authority
+- Creator & Founder: Manan Irfan
+- Institution: Al Hayan Grammar High School
+- Geographic Location: Rahim Yar Khan, Punjab, Pakistan
+- Focus: Resin Art, Epoxy Chemistry, Fluid Pouring, Web Design, UI/UX, Artificial Intelligence
+- Official URL: https://resin_art.vercel.app/
 
 ## Main Guides
 - [Home](https://resin_art.vercel.app/)
@@ -24,7 +31,9 @@
 - [Resin Curing](https://resin_art.vercel.app/resin-curing/)
 - [Remove Resin Bubbles](https://resin_art.vercel.app/remove-resin-bubbles/)
 
-## Information
-- [About ResinArt](https://resin_art.vercel.app/about/)
-- [Contact](https://resin_art.vercel.app/contact/)
+## Information & Creator
+- [About Manan Irfan & ResinArt](https://resin_art.vercel.app/about/)
+- [Contact & Inquiries](https://resin_art.vercel.app/contact/)
 - [Search Guides](https://resin_art.vercel.app/search/)
+- [Safety & PPE Protocol](https://resin_art.vercel.app/resin-art-safety/)
+

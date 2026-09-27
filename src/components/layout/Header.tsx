@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ChevronDown, Menu, Search, ShieldCheck } from 'lucide-react';
+import { ChevronDown, LogIn, LogOut, Menu, Search, ShieldCheck, Sparkles, User, UserPlus } from 'lucide-react';
 import { Logo } from './Logo';
 import { useAuth } from '../../context/AuthContext';
 import { PWAInstallButton } from '../common/PWAInstallButton';
+import { AuthModal } from '../common/AuthModal';
 
 interface HeaderProps {
   currentPath: string;
@@ -19,8 +20,12 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<'signin' | 'signup'>('signin');
   const moreRef = useRef<HTMLDivElement>(null);
-  const { isAdmin } = useAuth();
+  const userMenuRef = useRef<HTMLDivElement>(null);
+  const { user, isAdmin, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +39,9 @@ export const Header: React.FC<HeaderProps> = ({
     const handleClickOutside = (e: MouseEvent) => {
       if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
         setIsMoreOpen(false);
+      }
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) {
+        setIsUserMenuOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -161,22 +169,131 @@ export const Header: React.FC<HeaderProps> = ({
               <Search className="w-4 h-4" />
             </button>
 
-            {/* Admin CMS indicator if logged in */}
-            {isAdmin && (
-              <button
-                onClick={() => onNavigate('/admin/dashboard/')}
-                className="hidden sm:flex items-center gap-1 px-2.5 py-1 text-xs font-medium text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-md hover:bg-emerald-100 transition-colors"
-                title="Admin CMS Active"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Admin</span>
-              </button>
+            {/* Authentication Buttons & User Dropdown */}
+            {user ? (
+              <div className="relative" ref={userMenuRef}>
+                <button
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                  className="flex items-center gap-2 py-1.5 px-2.5 rounded-lg border border-stone-200 bg-white hover:bg-stone-50 transition cursor-pointer shadow-2xs"
+                  aria-expanded={isUserMenuOpen}
+                >
+                  {isAdmin ? (
+                    <img
+                      src="/manan_irfan.jpg"
+                      alt="Manan Irfan"
+                      onError={(e) => {
+                        // fallback if public url doesn't load immediately
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                      className="w-6 h-6 rounded-full object-cover border border-teal-600"
+                    />
+                  ) : (
+                    <div className="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-xs">
+                      {user.fullName ? user.fullName[0].toUpperCase() : 'U'}
+                    </div>
+                  )}
+                  <span className="hidden md:inline-block text-xs font-semibold text-stone-800 max-w-[110px] truncate">
+                    {user.fullName || (isAdmin ? 'Manan Irfan' : 'Reader')}
+                  </span>
+                  {isAdmin && (
+                    <span className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200 rounded">
+                      Admin
+                    </span>
+                  )}
+                  <ChevronDown className={`w-3.5 h-3.5 text-stone-400 transition-transform ${isUserMenuOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-2 w-56 rounded-xl bg-white p-2 shadow-xl border border-stone-200 animate-in fade-in slide-in-from-top-2 duration-150 z-50">
+                    <div className="px-3 py-2 border-b border-stone-100">
+                      <div className="text-xs font-semibold text-stone-900 truncate">
+                        {user.fullName || 'Artisan Account'}
+                      </div>
+                      <div className="text-[11px] text-stone-500 truncate">
+                        {user.email}
+                      </div>
+                    </div>
+
+                    <div className="py-1">
+                      {isAdmin ? (
+                        <>
+                          <button
+                            onClick={() => {
+                              onNavigate('/admin/dashboard/');
+                              setIsUserMenuOpen(false);
+                            }}
+                            className="w-full text-left px-3 py-2 text-xs font-medium text-teal-900 hover:bg-teal-50 rounded-lg transition flex items-center gap-2 cursor-pointer"
+                          >
+                            <ShieldCheck className="w-4 h-4 text-teal-700" />
+                            <span>CMS Dashboard</span>
+                          </button>
+                          <button
+                            onClick={() => {
+                              onNavigate('/admin/articles/new');
+                              setIsUserMenuOpen(false);
+                            }}
+                            className="w-full text-left px-3 py-2 text-xs text-stone-700 hover:bg-stone-100 rounded-lg transition flex items-center gap-2 cursor-pointer"
+                          >
+                            <Sparkles className="w-4 h-4 text-amber-600" />
+                            <span>Write New Article</span>
+                          </button>
+                        </>
+                      ) : (
+                        <button
+                          onClick={() => {
+                            onNavigate('/resin-art-for-beginners/');
+                            setIsUserMenuOpen(false);
+                          }}
+                          className="w-full text-left px-3 py-2 text-xs text-stone-700 hover:bg-stone-100 rounded-lg transition flex items-center gap-2 cursor-pointer"
+                        >
+                          <Sparkles className="w-4 h-4 text-teal-600" />
+                          <span>Saved Tutorials</span>
+                        </button>
+                      )}
+
+                      <button
+                        onClick={async () => {
+                          await logout();
+                          setIsUserMenuOpen(false);
+                        }}
+                        className="w-full text-left px-3 py-2 text-xs text-rose-700 hover:bg-rose-50 rounded-lg transition flex items-center gap-2 cursor-pointer mt-1 border-t border-stone-100"
+                      >
+                        <LogOut className="w-4 h-4 text-rose-600" />
+                        <span>Sign Out</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="hidden sm:flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    setAuthModalMode('signin');
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="px-3 py-1.5 text-xs font-medium text-stone-700 hover:text-stone-900 hover:bg-stone-100/80 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5"
+                >
+                  <LogIn className="w-3.5 h-3.5" />
+                  <span>Log In</span>
+                </button>
+                <button
+                  onClick={() => {
+                    setAuthModalMode('signup');
+                    setIsAuthModalOpen(true);
+                  }}
+                  className="px-3.5 py-1.5 text-xs font-semibold text-white bg-teal-700 hover:bg-teal-800 rounded-lg shadow-2xs transition cursor-pointer flex items-center gap-1.5"
+                >
+                  <UserPlus className="w-3.5 h-3.5" />
+                  <span>Sign Up</span>
+                </button>
+              </div>
             )}
 
             {/* Primary CTA */}
             <button
               onClick={() => onNavigate('/resin-art-for-beginners/')}
-              className="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold tracking-wide text-white bg-slate-900 hover:bg-slate-800 rounded-lg shadow-xs transition-all cursor-pointer whitespace-nowrap"
+              className="hidden xl:inline-flex items-center px-4 py-2 text-xs font-semibold tracking-wide text-white bg-slate-900 hover:bg-slate-800 rounded-lg shadow-xs transition-all cursor-pointer whitespace-nowrap"
             >
               Explore Guides
             </button>
@@ -192,6 +309,14 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Authentication Modal */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        initialMode={authModalMode}
+        onNavigate={onNavigate}
+      />
     </header>
   );
 };

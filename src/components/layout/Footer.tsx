@@ -30,10 +30,30 @@ export const Footer: React.FC<{ onNavigate: (path: string) => void }> = ({ onNav
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
           {/* Brand & Editorial Mission */}
           <div className="lg:col-span-2 space-y-4">
-            <Logo variant="light" size="lg" />
+            <Logo variant="light" size="lg" showTagline={true} />
             <p className="text-sm text-stone-400 max-w-sm leading-relaxed font-sans">
               ResinArt is an independent editorial publication dedicated to advancing knowledge in epoxy craft, fluid resin mechanics, studio safety standards, and artisanal finishing.
             </p>
+
+            {/* Founder Profile Lockup */}
+            <div 
+              onClick={() => onNavigate('/about/')}
+              className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-teal-500/40 transition cursor-pointer max-w-sm"
+            >
+              <img
+                src="/manan_irfan.jpg"
+                alt="Manan Irfan"
+                className="w-10 h-10 rounded-full object-cover border-2 border-teal-400/80 shrink-0"
+              />
+              <div className="text-xs">
+                <span className="text-white font-medium block">
+                  Manan Irfan · Founder & Student
+                </span>
+                <span className="text-stone-400 text-[11px] block">
+                  Al Hayan Grammar High School · Rahim Yar Khan, PK
+                </span>
+              </div>
+            </div>
 
             {/* Newsletter Subscription */}
             <div className="pt-2">

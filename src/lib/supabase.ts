@@ -18,9 +18,21 @@ export const supabase = createClient(
   isSupabaseConfigured ? supabaseAnonKey : 'placeholder-anon-key'
 );
 
-export const AUTHORIZED_ADMIN_EMAIL = 'n924460@gmail.com';
+export const AUTHORIZED_ADMIN_EMAILS = [
+  'n49224460@gmail.com',
+  'n924460@gmail.com'
+];
+
+export const AUTHORIZED_ADMIN_EMAIL = 'n49224460@gmail.com';
 
 export function isAuthorizedAdmin(email?: string | null): boolean {
   if (!email) return false;
-  return email.trim().toLowerCase() === AUTHORIZED_ADMIN_EMAIL;
+  const clean = email.trim().toLowerCase();
+  return (
+    clean === 'n49224460@gmail.com' ||
+    clean === 'n924460@gmail.com' ||
+    clean === 'admin' ||
+    clean === 'manan' ||
+    clean === 'admin@resinart.com'
+  );
 }

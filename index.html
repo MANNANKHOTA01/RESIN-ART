@@ -8,21 +8,35 @@
     <meta name="keywords" content="resin art, epoxy resin, ocean resin art, geode resin, resin crafts, resin for beginners, resin safety" />
     <link rel="canonical" href="https://resin_art.vercel.app/" />
     
+    <!-- GEO & Local/Global Optimization Metadata -->
+    <meta name="author" content="Manan Irfan" />
+    <meta name="creator" content="Manan Irfan" />
+    <meta name="publisher" content="ResinArt" />
+    <meta name="geo.region" content="PK-PB" />
+    <meta name="geo.placename" content="Rahim Yar Khan, Punjab, Pakistan" />
+    <meta name="geo.position" content="28.4212;70.3015" />
+    <meta name="ICBM" content="28.4212, 70.3015" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="distribution" content="Global" />
+    <meta name="rating" content="General" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <!-- OpenGraph Metadata -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ResinArt" />
     <meta property="og:title" content="ResinArt — Modern Resin Art Guides, Techniques & Creative Inspiration" />
-    <meta property="og:description" content="Master epoxy resin art from fundamentals to advanced cellular wave techniques, project tutorials, materials, and workshop safety." />
+    <meta property="og:description" content="Master epoxy resin art from fundamentals to advanced cellular wave techniques, project tutorials, materials, and workshop safety. Curated by Manan Irfan." />
     <meta property="og:url" content="https://resin_art.vercel.app/" />
     <meta property="og:image" content="https://resin_art.vercel.app/icon.svg" />
+    <meta property="og:locale" content="en_US" />
     
     <!-- Twitter Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ResinArt — Modern Resin Art Guides & Techniques" />
-    <meta name="twitter:description" content="Master epoxy resin art with complete beginner guides, projects, supplies, and studio safety." />
+    <meta name="twitter:description" content="Master epoxy resin art with complete beginner guides, projects, supplies, and studio safety. Curated by Manan Irfan." />
     <meta name="twitter:image" content="https://resin_art.vercel.app/icon.svg" />
 
-    <!-- PWA & Mobile Web Capabilities -->
+    <!-- Favicon & PWA Capabilities -->
     <meta name="theme-color" content="#091424" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,6 +44,7 @@
     <meta name="apple-mobile-web-app-title" content="ResinArt" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="shortcut icon" type="image/svg+xml" href="/icon.svg" />
     <link rel="apple-touch-icon" href="/icon.svg" />
 
     <!-- Google Fonts: Editorial Serif (Playfair Display) + Clean Sans (Plus Jakarta Sans) -->
@@ -37,19 +52,123 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Structured Data (JSON-LD WebSite) -->
+    <!-- Structured Data (JSON-LD WebSite, Organization, Person, FAQ for AEO/GEO/SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "ResinArt",
-      "url": "https://resin_art.vercel.app/",
-      "description": "Comprehensive editorial publication and educational guide for resin art, epoxy techniques, projects, and studio safety.",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://resin_art.vercel.app/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://resin_art.vercel.app/#website",
+          "name": "ResinArt",
+          "url": "https://resin_art.vercel.app/",
+          "description": "Comprehensive editorial publication and educational guide for resin art, epoxy techniques, projects, and studio safety.",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@id": "https://resin_art.vercel.app/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://resin_art.vercel.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://resin_art.vercel.app/#organization",
+          "name": "ResinArt",
+          "url": "https://resin_art.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://resin_art.vercel.app/icon.svg",
+            "width": 512,
+            "height": 512
+          },
+          "founder": {
+            "@id": "https://resin_art.vercel.app/#person"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rahim Yar Khan",
+            "addressRegion": "Punjab",
+            "addressCountry": "PK"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://resin_art.vercel.app/#person",
+          "name": "Manan Irfan",
+          "jobTitle": "Resin Artist, Digital Creator & Student",
+          "url": "https://resin_art.vercel.app/about/",
+          "image": "https://resin_art.vercel.app/manan_irfan.jpg",
+          "description": "10th-class student at Al Hayan Grammar High School in Rahim Yar Khan, Pakistan. Creator of ResinArt, passionate about resin art, technology, web development, UI/UX design, and AI.",
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Al Hayan Grammar High School",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Rahim Yar Khan",
+              "addressRegion": "Punjab",
+              "addressCountry": "PK"
+            }
+          },
+          "knowsAbout": [
+            "Resin Art",
+            "Epoxy Resin Chemistry",
+            "Ocean Wave Resin Techniques",
+            "Geode Resin Art",
+            "Web Development",
+            "UI/UX Design",
+            "Artificial Intelligence"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://resin_art.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is resin art?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Resin art is a creative visual art form created by mixing liquid epoxy resin and a chemical hardener (polyamine catalyst). When blended in exact stoichiometric ratios (typically 1:1 or 2:1), an exothermic polymerization reaction transforms the fluid into an ultra-glossy, durable, glass-like thermoset solid."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the proper epoxy mixing ratio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most art-grade coating resins require an exact 1:1 ratio by volume (or 100:85 by weight). Deep pour casting resins often use a 2:1 or 3:1 ratio. Precise measurement and dual-cup stirring for 3 minutes are critical to avoid tacky or sticky uncured resin."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you remove bubbles from cured resin?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To eliminate bubbles, pre-warm resin bottles in a 75°F (24°C) water bath before mixing, pour slowly in thin streams, and sweep a butane culinary torch 4 to 6 inches above the poured surface 3 to 5 minutes after pouring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is resin art safe to do at home?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, provided proper safety equipment is used: an organic vapor respirator (NIOSH certified), nitrile gloves (never latex), eye goggles, and a well-ventilated dedicated workspace away from food, children, and pets."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Who founded ResinArt?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ResinArt was created and founded by Manan Irfan, a 10th-class student at Al Hayan Grammar High School in Rahim Yar Khan, Punjab, Pakistan, combining traditional resin craftsmanship with modern web technology and digital education."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
   </head>
