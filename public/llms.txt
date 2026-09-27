@@ -1,0 +1,30 @@
+# ResinArt
+
+> ResinArt is an informational website dedicated to resin art, including beginner guides, techniques, projects, supplies, tools, safety, troubleshooting, and resin education.
+
+## Main Guides
+- [Home](https://resin_art.vercel.app/)
+- [Resin Art for Beginners](https://resin_art.vercel.app/resin-art-for-beginners/)
+- [Resin Art Techniques](https://resin_art.vercel.app/resin-art-techniques/)
+- [Resin Art Ideas](https://resin_art.vercel.app/resin-art-ideas/)
+- [Resin Art Projects](https://resin_art.vercel.app/resin-art-projects/)
+- [Resin Art Supplies](https://resin_art.vercel.app/resin-art-supplies/)
+- [Resin Art Tools](https://resin_art.vercel.app/resin-art-tools/)
+- [Resin Art Safety](https://resin_art.vercel.app/resin-art-safety/)
+- [Resin Art Troubleshooting](https://resin_art.vercel.app/resin-art-troubleshooting/)
+- [Resin Art Care](https://resin_art.vercel.app/resin-art-care/)
+- [Resin Art FAQ](https://resin_art.vercel.app/resin-art-faq/)
+
+## Supporting Guides
+- [Epoxy Resin](https://resin_art.vercel.app/epoxy-resin/)
+- [Resin vs Epoxy](https://resin_art.vercel.app/resin-vs-epoxy/)
+- [Resin Molds](https://resin_art.vercel.app/resin-molds/)
+- [Resin Pigments](https://resin_art.vercel.app/resin-pigments/)
+- [Resin Mixing](https://resin_art.vercel.app/resin-mixing/)
+- [Resin Curing](https://resin_art.vercel.app/resin-curing/)
+- [Remove Resin Bubbles](https://resin_art.vercel.app/remove-resin-bubbles/)
+
+## Information
+- [About ResinArt](https://resin_art.vercel.app/about/)
+- [Contact](https://resin_art.vercel.app/contact/)
+- [Search Guides](https://resin_art.vercel.app/search/)

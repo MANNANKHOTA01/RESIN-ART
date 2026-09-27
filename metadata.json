@@ -1,0 +1,6 @@
+{
+  "name": "ResinArt - Editorial Guide to Modern Resin Art",
+  "description": "Discover the art of epoxy resin. Comprehensive editorial guides, beginner tutorials, techniques, project inspiration, materials, and studio safety.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

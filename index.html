@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResinArt — Modern Resin Art Guides, Techniques & Creative Inspiration</title>
+    <meta name="description" content="Discover the art of epoxy resin. Master resin art with peer-reviewed beginner guides, advanced wave pouring techniques, safety essentials, tools, and project tutorials." />
+    <meta name="keywords" content="resin art, epoxy resin, ocean resin art, geode resin, resin crafts, resin for beginners, resin safety" />
+    <link rel="canonical" href="https://resin_art.vercel.app/" />
+    
+    <!-- OpenGraph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ResinArt" />
+    <meta property="og:title" content="ResinArt — Modern Resin Art Guides, Techniques & Creative Inspiration" />
+    <meta property="og:description" content="Master epoxy resin art from fundamentals to advanced cellular wave techniques, project tutorials, materials, and workshop safety." />
+    <meta property="og:url" content="https://resin_art.vercel.app/" />
+    <meta property="og:image" content="https://resin_art.vercel.app/icon.svg" />
+    
+    <!-- Twitter Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ResinArt — Modern Resin Art Guides & Techniques" />
+    <meta name="twitter:description" content="Master epoxy resin art with complete beginner guides, projects, supplies, and studio safety." />
+    <meta name="twitter:image" content="https://resin_art.vercel.app/icon.svg" />
+
+    <!-- PWA & Mobile Web Capabilities -->
+    <meta name="theme-color" content="#091424" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ResinArt" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+
+    <!-- Google Fonts: Editorial Serif (Playfair Display) + Clean Sans (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data (JSON-LD WebSite) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ResinArt",
+      "url": "https://resin_art.vercel.app/",
+      "description": "Comprehensive editorial publication and educational guide for resin art, epoxy techniques, projects, and studio safety.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://resin_art.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#FAF8F5] text-[#1A202C] antialiased selection:bg-teal-700 selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
+
